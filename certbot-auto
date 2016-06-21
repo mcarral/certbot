@@ -497,6 +497,9 @@ Bootstrap() {
   elif [ -f /etc/os-release ] && `grep -q openSUSE /etc/os-release` ; then
     echo "Bootstrapping dependencies for openSUSE-based OSes..."
     BootstrapSuseCommon
+  elif [ -f /etc/SuSE-release ] && `grep -q SUSE /etc/SuSE-release` ; then
+    echo "Bootstrapping dependencies for SUSE Linux Enterprise Server..."
+    BootstrapSuseCommon
   elif [ -f /etc/arch-release ]; then
     if [ "$DEBUG" = 1 ]; then
       echo "Bootstrapping dependencies for Archlinux..."
